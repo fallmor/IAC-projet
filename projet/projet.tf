@@ -12,8 +12,8 @@ vpc_security_group_ids = ["${aws_security_group.projet-GS.id}"]
 user_data = <<-EOF
             #!/bin/bash
             sudo apt-get update -y
-
-            git clone "https://github.com/gleegaye/ansible_install_deploy_docker" /tmp/mor
+	    sudo mkdir /tmp/mor
+	    git clone "https://github.com/fallmor/IAC-projet/tree/master/deployondocker" /tmp/mor 
             cd /tmp/mor
             sudo chmod +x *.sh
             ./ansible.sh
