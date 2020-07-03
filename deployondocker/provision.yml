@@ -1,0 +1,4 @@
+---
+- import_playbook: install-docker-compose.yml
+- import_playbook: install-docker-ce.yml
+- import_playbook: build.yml

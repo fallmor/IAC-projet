@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  gather_facts: false
+  connection: local
+  become: yes
+  tasks:
+  - name: Build containers and expose services
+    shell: bash run.sh
+
+  - name: Display running containers
+    shell: sudo docker ps
+    register: output
+  - debug: msg={{ output.stdout_lines }} 
